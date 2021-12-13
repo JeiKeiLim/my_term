@@ -4,7 +4,7 @@ sudo apt -y install software-properties-common
 
 sudo add-apt-repository -y ppa:jonathonf/vim
 sudo apt update
-sudo apt -y install tmux vim htop
+sudo apt -y install tmux vim htop g++-8 libstdc++6 cmake
 
 cd ~
 git clone --depth=1 https://github.com/JeiKeiLim/vimrc.git ~/.vim_runtime
