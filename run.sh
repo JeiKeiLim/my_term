@@ -21,3 +21,7 @@ EOF
 
 echo "bind -f  ~/.inputrc" >> ~/.bashrc
 
+cd $HOME/.vim_runtime/my_plugins \
+  && git clone --recursive https://github.com/ycm-core/YouCompleteMe.git \
+  && cd YouCompleteMe \
+  && CC=gcc-8 CXX=g++-8 python3 install.py --clangd-completer
