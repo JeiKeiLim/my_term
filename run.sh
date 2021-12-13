@@ -4,7 +4,7 @@ sudo apt -y install software-properties-common
 
 sudo add-apt-repository -y ppa:jonathonf/vim
 sudo apt update
-sudo apt -y install tmux vim htop
+sudo apt -y install tmux vim htop g++-8 libstdc++6 cmake
 
 cd ~
 git clone --depth=1 https://github.com/JeiKeiLim/vimrc.git ~/.vim_runtime
@@ -21,3 +21,7 @@ EOF
 
 echo "bind -f  ~/.inputrc" >> ~/.bashrc
 
+cd $HOME/.vim_runtime/my_plugins \
+  && git clone --recursive https://github.com/ycm-core/YouCompleteMe.git \
+  && cd YouCompleteMe \
+  && CC=gcc-8 CXX=g++-8 python3 install.py --clangd-completer
